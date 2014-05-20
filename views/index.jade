@@ -1,0 +1,29 @@
+extends layout
+
+block content
+    h1=result
+
+    h1="Add Question"
+    form(action="/questions",method="post")
+        select(name="categoryId")
+            each category, i in categoryList
+                option(value=category.id)=category.attributes.title
+        br
+        "Question Text":
+        input(type="text",name="text")
+        br
+        "Answer":
+        input(type="text",name="answer")
+        br
+        "Flavor Text":
+        input(type="text",name="flavor_text")
+        br
+        input(type="submit",value="Create")
+
+    h1="Get Questions for Category"
+        form(action="/questions/list",method="post")
+                select(name="categoryId")
+                    each category, i in categoryList
+                        option(value=category.id)=category.attributes.title
+                br
+                input(type="submit",value="Get")

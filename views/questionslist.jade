@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    h1=result
+
+    h1="Questions"
+    div
+        each question, i in questionList
+            p="Text: " + question.attributes.text
+            p="Answer: " + question.attributes.answer
+            p="Flavor Text: " + question.attributes.flavor_text
+            hr

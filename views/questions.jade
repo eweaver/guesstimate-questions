@@ -1,0 +1,7 @@
+extends layout
+
+block content
+    h1="Questions"
+    select(name="questionId")
+            each question, i in questionList
+                option(value=question.objectId)=question.text
